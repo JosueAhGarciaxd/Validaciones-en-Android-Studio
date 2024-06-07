@@ -49,6 +49,11 @@ class MainActivity : AppCompatActivity() {
                         //validar que la contraeña tenga un minimo de 6 caracteres
                         if (txtContrasena.text.length < 6 || txtContrasena.text.matches("[0-9]+".toRegex())){
                             Toast.makeText(this, "La clave debe contener mas de 6 digitos", Toast.LENGTH_LONG).show()
+                        }else{
+                            //validar El dui
+                            if (txtDui.text.length > 10 && txtDui.text.matches("[0-9]+".toRegex())){
+                                Toast.makeText(this, "Solo numero", Toast.LENGTH_LONG).show()
+                            }
                         }
 
 

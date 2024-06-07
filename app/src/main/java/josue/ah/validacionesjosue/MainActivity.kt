@@ -44,7 +44,15 @@ class MainActivity : AppCompatActivity() {
                 }else{
                     //Validar Correo Electronico
                     if (!txtCorreo.text.matches("[a-zA-Z0-9.-_]+@[a-z]+\\.+[a-z]+".toRegex())){
-                        
+                        Toast.makeText(this, "Ingrese correo valido", Toast.LENGTH_LONG).show()
+                    }else{
+                        //validar que la contraeña tenga un minimo de 6 caracteres
+                        if (txtContrasena.text.length < 6 || txtContrasena.text.matches("[0-9]+".toRegex())){
+                            Toast.makeText(this, "La clave debe contener mas de 6 digitos", Toast.LENGTH_LONG).show()
+                        }
+
+
+
                     }
                 }
 

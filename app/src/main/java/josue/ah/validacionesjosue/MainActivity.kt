@@ -39,8 +39,13 @@ class MainActivity : AppCompatActivity() {
             }else{
 
                 //Comprobar que solo se ingresen numeros
-                if(txtEdad.text.matches("[0-9]+".toRegex())) {
-
+                if(!txtEdad.text.matches("[0-9]+".toRegex())) {
+                    Toast.makeText(this, "Ingrese solo numeros", Toast.LENGTH_LONG).show()
+                }else{
+                    //Validar Correo Electronico
+                    if (!txtCorreo.text.matches("[a-zA-Z0-9.-_]+@[a-z]+\\.+[a-z]+".toRegex())){
+                        
+                    }
                 }
 
             }

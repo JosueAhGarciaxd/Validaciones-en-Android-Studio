@@ -3,6 +3,7 @@ package josue.ah.validacionesjosue
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,20 +21,29 @@ class MainActivity : AppCompatActivity() {
         }
 
         //1- Mandar a llamar a todos los elemento de la vista
-        val txtnombre= findViewById<EditText>(R.id.txtNombre)
-        val txtcorreo= findViewById<EditText>(R.id.txtCorreo)
-        val txtcontrasena= findViewById<EditText>(R.id.txtContrasena)
-        val txtedad= findViewById<EditText>(R.id.txtEdad)
-        val txtdui= findViewById<EditText>(R.id.txtDUI)
+        val txtNombre= findViewById<EditText>(R.id.txtNombre)
+        val txtCorreo= findViewById<EditText>(R.id.txtCorreo)
+        val txtContrasena= findViewById<EditText>(R.id.txtContrasena)
+        val txtEdad= findViewById<EditText>(R.id.txtEdad)
+        val txtDui= findViewById<EditText>(R.id.txtDUI)
         val btnAgregar = findViewById<Button>(R.id.btnAgregar)
 
         //2- Procesamos el boton
 
         btnAgregar.setOnClickListener {
             //Validamos que los campos no esten vacios
-            if (txtnombre.text.isEmpty() || txtcorreo.text.isEmpty()
-                || txtcontrasena.text.isEmpty() || txtedad.text.isEmpty()
-                ||txtdui.text.isEmpty())
+            if (txtNombre.text.isEmpty() || txtCorreo.text.isEmpty()
+                || txtContrasena.text.isEmpty() || txtEdad.text.isEmpty()
+                ||txtDui.text.isEmpty()){
+                Toast.makeText(this, "Campos vacios", Toast.LENGTH_LONG).show()
+            }else{
+
+                //Comprobar que solo se ingresen numeros
+                if(txtEdad.text.matches("[0-9]+".toRegex())) {
+
+                }
+
+            }
         }
 
 
